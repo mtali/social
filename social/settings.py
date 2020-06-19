@@ -125,5 +125,10 @@ LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
+# Serve uploaded files
+# TODO: Change this on production
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 # TODO: Change email backend in production
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
