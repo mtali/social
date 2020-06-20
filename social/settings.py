@@ -24,7 +24,7 @@ SECRET_KEY = '1!rpbu2j%835#1m=7j94keqk5dp$e1%2*fd_hs$%(nsdg@i$!2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'social_django'
+    'social_django',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -102,6 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2'
 ]
 
 # Internationalization
@@ -133,3 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # TODO: Change email backend in production
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '261836311715674'
+SOCIAL_AUTH_FACEBOOK_SECRET = '610ac343715fa647f22de805bb13148f'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
