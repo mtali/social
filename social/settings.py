@@ -24,6 +24,9 @@ SECRET_KEY = '1!rpbu2j%835#1m=7j94keqk5dp$e1%2*fd_hs$%(nsdg@i$!2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Debug thumbnail
+THUMBNAIL_DEBUG = True
+
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 
 # Application definition
