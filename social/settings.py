@@ -108,6 +108,8 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2'
 ]
 
+AUTH_USER_MODEL = "account.User"
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
