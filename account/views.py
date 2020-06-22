@@ -90,7 +90,8 @@ def user_follow(request):
         try:
             user = User.objects.get(id=user_id)
             if action == 'follow':
-                Contact.objects.get_or_create(user_from=request.user, user_to=user)
+                x = Contact.objects.get_or_create(user_from=request.user, user_to=user)
+                print(x)
             else:
                 Contact.objects.filter(user_from=request.user, user_to=user).delete()
             return JsonResponse({'status': 'ok'})

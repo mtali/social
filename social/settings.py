@@ -45,9 +45,11 @@ INSTALLED_APPS = [
     'social_django',
     'django_extensions',
     'easy_thumbnails',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -146,3 +148,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SOCIAL_AUTH_FACEBOOK_KEY = '261836311715674'
 SOCIAL_AUTH_FACEBOOK_SECRET = '610ac343715fa647f22de805bb13148f'
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+# Debug sql queries
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
