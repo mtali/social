@@ -154,3 +154,8 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+# Redis configurations
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
