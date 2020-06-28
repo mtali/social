@@ -8,7 +8,7 @@
     </div>
     {% with total_followers=user.followers.count %}
         <span class="count">
-            <span class="total">{{ total_followers }} </span> follower{{ total_followers|pluralize }}
+            <span class="total">{{ total_followers }} </span> <span class="follow-text">follower{{ total_followers|pluralize }}</span>
         </span>
         <a href="#" data-id="{{ user.id }}"
            data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow button">
@@ -41,7 +41,16 @@
                 $('a.follow').text(previous_action == 'follow' ? 'Unfollow' : 'Follow');
                 // Update total followers
                 let previous_followers = parseInt($('span.count .total').text());
-                $('span.count .total').text(previous_action == 'follow' ? previous_followers + 1 : previous_followers - 1);
+                let current_followers = previous_followers;
+                if(previous_action == 'follow') {
+                    current_followers += 1;
+                } else {
+                    current_followers -= 1;
+                }
+                $('span.count .total').text(current_followers);
+
+                // Update text
+                $('span.count .follow-text').text(current_followers == 1 ? 'follower' : 'followers');
             }
         );
     });

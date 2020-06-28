@@ -13,8 +13,11 @@
     <p>Drag the following button to your bookmark toolbar to post images from other websites
         → <a href="javascript:{% include "bookmarklet_launcher.js" %}" class="button">Post it</a></p>
 
+    <p>Images trending → <a href="{% url "images:ranking" %}">HERE</a></p>
+
     <p>You can also <a href="{% url "edit" %}">edit your profile</a> or
         <a href="{% url "password_change" %}">change your password</a></p>.
+
 
     <h1>What's happening</h1>
     <div id="action-list">
